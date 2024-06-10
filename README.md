@@ -1,27 +1,60 @@
 # IrpfAngular
+# Calculadora de Desgravación de IRPF
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+Esta es una aplicación web desarrollada en Angular que te permite calcular la desgravación del Impuesto sobre la Renta de las Personas Físicas (IRPF) correspondiente al año 2024 en función de diferentes parámetros, como la renta, los planes de pensiones personales, de empresa y de autónomos.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Calcula la desgravación del IRPF según los parámetros ingresados.
+- Muestra el resultado del cálculo de desgravación en euros.
 
-## Code scaffolding
+## Instalación
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Clona este repositorio en tu máquina local usando el siguiente comando:
 
-## Build
+    ```bash
+    git clone https://github.com/vueling-angular/irpf-angular.git
+    ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Navega hasta el directorio del proyecto:
 
-## Running unit tests
+    ```bash
+    cd irpf-angular
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Instala las dependencias necesarias utilizando npm:
 
-## Running end-to-end tests
+    ```bash
+    npm install
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. Inicia la aplicación:
 
-## Further help
+    ```bash
+    ng serve
+    ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+5. Abre tu navegador web y ve a `http://localhost:4200/` para ver la aplicación en funcionamiento.
+
+## Uso
+
+1. Ingresa el valor de la renta/base imponible en el campo correspondiente.
+2. Ingresa el valor de los planes de pensiones, ya sean personales, de empresa y de autónomos en los campos respectivos.
+3. Haz clic en el botón "Calcular" para obtener el resultado de la desgravación del IRPF.
+
+## Contribución
+
+Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, sigue estos pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
+3. Realiza tus cambios y haz commit de ellos (`git commit -am 'Agrega una nueva funcionalidad'`).
+4. Haz push de tu rama (`git push origin feature/nueva-funcionalidad`).
+5. Abre un Pull Request.
+
+## Autor
+
+- Nombre: Melissa Casola
+- Contacto: melissacasola@gmail.com
+
+
