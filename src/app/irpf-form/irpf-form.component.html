@@ -1,0 +1,32 @@
+
+<div>
+    <form [formGroup]="irpfForm" (ngSubmit)="onSubmit()">
+      <label for="renta">Renta/base imponible:</label>
+      <input id="renta" formControlName="renta" type="number" required>
+  
+      <label for="ppersonal">Plan de pensiones personal:</label>
+      <input id="ppersonal" formControlName="ppersonal" type="number" required>
+  
+      <label for="pempresa">Plan de pensiones de empresa:</label>
+      <input id="pempresa" formControlName="pempresa" type="number" required>
+  
+      <label for="pautonomo">Plan de pensiones de autónomo:</label>
+      <input id="pautonomo" formControlName="pautonomo" type="number" required>
+  
+      <button type="submit" [disabled]="!irpfForm.valid">Calcular</button>
+    </form>
+  
+    <div ngFor="let resultado of resultados">
+      <ul>
+        <li>Renta imponible: {{ resultados?.renta }} €</li>
+        <li>Porcentaje IRPF aplicable: {{ resultados?.porcentajeIRPF }} %</li>
+        <li>Total aportado a planes de pensiones: {{ resultados?.totalPlanesPensiones }} €</li>
+        <li>Cantidad que el estado debe devolverle o no pagará en IRPF: {{ resultados?.desgravacion }} €</li>
+      </ul>
+      <!-- <p></p>
+      <p>Total aportado a planes de pensiones: {{ resultado.totalPlanesPensiones }} €</p>
+      <p> {{ resultado.porcentajeIRPF }} %</p>
+      <p>Cantidad que el estado debe devolverle o no pagará en IRPF: {{ resultado.desgravacion }} €</p> -->
+    </div>
+  </div>
+  
