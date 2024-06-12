@@ -1,8 +1,8 @@
 <div ngFor="let resultado of resultados">
   <ul>
-    <li>Renta imponible: {{ resultados?.renta }} €</li>
-    <li>Porcentaje IRPF aplicable: {{ resultados?.porcentajeIRPF }} %</li>
-    <li>Total aportado a planes de pensiones: {{ resultados?.totalPlanesPensiones }} €</li>
-    <li>Cantidad que el estado debe devolverle o no pagará en IRPF: {{ resultados?.desgravacion }} €</li>
+    <li>{{'Renta-imponible' | translate }}: {{ resultados?.renta }} €</li>
+    <li>{{'porcentaje' | translate}}: {{ resultados?.porcentajeIRPF }} %</li>
+    <li>{{"pension" | translate}}: {{ resultados?.totalPlanesPensiones }} €</li>
+    <li>{{"Resultado" | translate }}: {{ resultados?.desgravacion }} €</li>
   </ul>
 </div>

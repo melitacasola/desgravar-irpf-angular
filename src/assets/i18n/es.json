@@ -1,0 +1,12 @@
+{
+  "title": "hola como estas??.",
+  "Renta-imponible": "Renta imponible",
+  "porcentaje": "Porcentaje IRPF aplicable",
+  "pension": "Total aportado a planes de pensiones",
+  "Resultado": "Cantidad que el estado debe devolverle o no pagará en IRPF",
+  "renta": "Renta/base imponible:",
+  "ppersonal": "Plan de pensiones personal:",
+  "pempresa": "Plan de pensiones de empresa:",
+  "pautonomo": "Plan de pensiones de autónomo:",
+  "submit": "Calcular"
+}

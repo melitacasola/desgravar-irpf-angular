@@ -1,0 +1,12 @@
+{
+  "title": "Your app is running with i18n enabled.",
+  "porcentaje": "Applicable IRPF percentage",
+  "pension": "Total contributed to pension plans",
+  "Renta-imponible": "Taxable income",
+  "Resultado": "Amount the state should return or not pay in IRPF",
+  "renta": "Taxable income/base amount:",
+  "ppersonal": "Personal pension plan:",
+  "pempresa": "Company pension plan:",
+  "pautonomo": "Self-employed pension plan:",
+  "submit": "Calculate"
+}
