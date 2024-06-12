@@ -1,32 +1,21 @@
-
 <div>
-    <form [formGroup]="irpfForm" (ngSubmit)="onSubmit()">
-      <label for="renta">Renta/base imponible:</label>
-      <input id="renta" formControlName="renta" type="number" required>
-  
-      <label for="ppersonal">Plan de pensiones personal:</label>
-      <input id="ppersonal" formControlName="ppersonal" type="number" required>
-  
-      <label for="pempresa">Plan de pensiones de empresa:</label>
-      <input id="pempresa" formControlName="pempresa" type="number" required>
-  
-      <label for="pautonomo">Plan de pensiones de autónomo:</label>
-      <input id="pautonomo" formControlName="pautonomo" type="number" required>
-  
-      <button type="submit" [disabled]="!irpfForm.valid">Calcular</button>
+  <form [formGroup]="irpfForm" (ngSubmit)="onSubmit()">
+    <label for="renta" class="my-1">Renta/base imponible:</label>
+    <input id="renta" formControlName="renta" type="number" required class="peer h-full w-full rounded-[7px] border border-blue-gray-200 bg-transparent px-3 py-2 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 my-2 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
+
+    <label for="ppersonal" class="my-2">Plan de pensiones personal:</label>
+    <input id="ppersonal" formControlName="ppersonal" type="number" required class="peer h-full w-full rounded-[7px] border border-blue-gray-200 bg-transparent px-3 py-2 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
+
+    <label for="pempresa" class="my-2">Plan de pensiones de empresa:</label>
+    <input id="pempresa" formControlName="pempresa" type="number" required class="peer h-full w-full rounded-[7px] border border-blue-gray-200 bg-transparent px-3 py-2 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
+
+    <label for="pautonomo" class="my-2">Plan de pensiones de autónomo:</label>
+    <input id="pautonomo" formControlName="pautonomo" type="number" required class="peer h-full w-full rounded-[7px] border border-blue-gray-200 bg-transparent px-3 py-2 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
+
+    <button type="submit" [disabled]="!irpfForm.valid" class="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">Calcular</button>
     </form>
-  
-    <div ngFor="let resultado of resultados">
-      <ul>
-        <li>Renta imponible: {{ resultados?.renta }} €</li>
-        <li>Porcentaje IRPF aplicable: {{ resultados?.porcentajeIRPF }} %</li>
-        <li>Total aportado a planes de pensiones: {{ resultados?.totalPlanesPensiones }} €</li>
-        <li>Cantidad que el estado debe devolverle o no pagará en IRPF: {{ resultados?.desgravacion }} €</li>
-      </ul>
-      <!-- <p></p>
-      <p>Total aportado a planes de pensiones: {{ resultado.totalPlanesPensiones }} €</p>
-      <p> {{ resultado.porcentajeIRPF }} %</p>
-      <p>Cantidad que el estado debe devolverle o no pagará en IRPF: {{ resultado.desgravacion }} €</p> -->
-    </div>
+  <div class="m-2">
+
+    <app-irpf-results [resultados]="resultados" />
   </div>
-  
+</div>
