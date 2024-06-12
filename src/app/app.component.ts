@@ -12,5 +12,5 @@ import { BrowserModule } from '@angular/platform-browser';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'irpf-angular';
+  title = 'IRPF-angular';
 }

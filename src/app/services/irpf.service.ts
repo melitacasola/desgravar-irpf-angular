@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TramoIRPF } from '../models/tramoIRPF-interface';
 import { ResultadoIRPF } from '../models/resultadoIRPF-interface';
+import { IrpfNeeds } from '../models/irpf-needs.interface';
 
 const tramosIRPF: TramoIRPF[] = [
   { limiteSuperior: 12449, porcentaje: 19 },
@@ -19,6 +20,9 @@ export class IrpfService {
 
   constructor() { }
   obtenerPorcentajeIRPF(renta: number): number {
+    if (renta <= 0) {
+      return 0;
+    }
     for (const tramo of tramosIRPF) {
       if (renta <= tramo.limiteSuperior) {
         return tramo.porcentaje;
@@ -27,9 +31,10 @@ export class IrpfService {
     return 0;
   }
 
-  calcularIRPF(renta: number, ppersonal: number, pempresa: number, pautonomo: number): ResultadoIRPF {
-    const totalPlanesPensiones = ppersonal + pempresa + pautonomo;
-    const porcentajeIRPF = this.obtenerPorcentajeIRPF(renta);
+  calcularIRPF(obj:IrpfNeeds): ResultadoIRPF {
+    const totalPlanesPensiones = obj.ppersonal + obj.pempresa + obj.pautonomo;
+    const porcentajeIRPF = this.obtenerPorcentajeIRPF(obj.renta);
+    const renta = obj.renta;
     const desgravacion = totalPlanesPensiones * (porcentajeIRPF / 100);
 
     return {

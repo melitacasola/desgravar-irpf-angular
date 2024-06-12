@@ -1,0 +1,16 @@
+<!-- <div >
+    <ul>
+      <li>Renta imponible: {{ resultados?.renta }} €</li>
+      <li>Porcentaje IRPF aplicable: {{ resultados?.porcentajeIRPF }} %</li>
+      <li>Total aportado a planes de pensiones: {{ resultados?.totalPlanesPensiones }} €</li>
+      <li>Cantidad que el estado debe devolverle o no pagará en IRPF: {{ resultados?.desgravacion }} €</li>
+    </ul>
+  </div> -->
+  <div ngFor="let resultado of resultados">
+    <ul>
+      <li>Renta imponible: {{ resultados?.renta }} €</li>
+      <li>Porcentaje IRPF aplicable: {{ resultados?.porcentajeIRPF }} %</li>
+      <li>Total aportado a planes de pensiones: {{ resultados?.totalPlanesPensiones }} €</li>
+      <li>Cantidad que el estado debe devolverle o no pagará en IRPF: {{ resultados?.desgravacion }} €</li>
+    </ul>
+  </div>
