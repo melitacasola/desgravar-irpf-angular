@@ -23,9 +23,9 @@ export class IrpfFormComponent {
 
   irpfForm = new FormGroup({
     renta: new FormControl('', [Validators.required, Validators.min(0)]),
-    ppersonal: new FormControl('', [Validators.required, Validators.min(0)]),
-    pempresa: new FormControl('', [Validators.required, Validators.min(0)]),
-    pautonomo: new FormControl('', [Validators.required, Validators.min(0)])
+    ppersonal: new FormControl('', [Validators.required, Validators.min(0), Validators.max(1500)]),
+    pempresa: new FormControl('', [Validators.required, Validators.min(0), Validators.max(8500)]),
+    pautonomo: new FormControl('', [Validators.required, Validators.min(0), Validators.max(5750)])
   });
 
 
