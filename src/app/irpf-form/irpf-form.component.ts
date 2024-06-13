@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
 import { IrpfService } from '../services/irpf.service';
 import { ResultadoIRPF } from '../models/resultadoIRPF-interface';
 import { NgIf } from '@angular/common';
@@ -7,6 +7,7 @@ import { IrpfResultsComponent } from '../irpf-results/irpf-results.component';
 import { IrpfNeeds } from '../models/irpf-needs.interface';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
+import { isValidField, getFieldError } from '../helpers/form-helpers';
 
 @Component({
   selector: 'app-irpf-form',
@@ -49,15 +50,21 @@ export class IrpfFormComponent {
         ppersonal: ppersonal ? ppersonal : 0,
         pempresa: pempresa ? pempresa : 0,
         pautonomo: pautonomo ? pautonomo : 0
-      }
+      };
 
-      this.resultados = this.irpfService.calcularIRPF(
-        this.calcNeeds!
-      );
+      this.resultados = this.irpfService.calcularIRPF(this.calcNeeds!);
       console.warn(this.resultados);
-
-      // this.resultados = desgravacion;
+    } else {
+      this.irpfForm.markAllAsTouched();
     }
+  }
+
+  isValidField(field: string) {
+    return isValidField(this.irpfForm, field);
+  }
+
+  getFieldError(field: string): string | null {
+    return getFieldError(this.irpfForm, field);
   }
 
 }
