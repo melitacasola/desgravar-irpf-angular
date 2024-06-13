@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent {
   title = 'IRPF-angular';
 
-  selectedLanguage = 'es';
+  selectedLanguage = 'en';
 
   constructor(private translateService: TranslateService){}
 

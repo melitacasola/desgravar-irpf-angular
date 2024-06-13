@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 export class IrpfResultsComponent {
   @Input() resultados: ResultadoIRPF| undefined;
 
-  selectedLanguage = 'es';
+  selectedLanguage = 'en';
   constructor(private translateService: TranslateService){}
 
   onLanguageChange() {
