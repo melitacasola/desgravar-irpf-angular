@@ -8,5 +8,8 @@
   "ppersonal": "Plan de pensiones personal:",
   "pempresa": "Plan de pensiones de empresa:",
   "pautonomo": "Plan de pensiones de autónomo:",
-  "submit": "Calcular"
+  "submit": "Calcular",
+  "Este campo es requerido": "Este campo es requerido",
+  "El valor debe ser mayor o igual a 0": "El valor debe ser mayor o igual a 0",
+  "El valor debe ser menor o igual a": "El valor debe ser menor o igual a"
 }

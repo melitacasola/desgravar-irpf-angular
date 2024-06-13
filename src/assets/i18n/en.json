@@ -8,5 +8,8 @@
   "ppersonal": "Personal pension plan:",
   "pempresa": "Company pension plan:",
   "pautonomo": "Self-employed pension plan:",
-  "submit": "Calculate"
+  "submit": "Calculate",
+  "Este campo es requerido": "This field is required",
+  "El valor debe ser mayor o igual a 0": "The value must be greater than or equal to 0",
+  "El valor debe ser menor o igual a": "The value must be less than or equal to"
 }

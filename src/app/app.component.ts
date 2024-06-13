@@ -1,24 +1,32 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { IrpfFormComponent } from './irpf-form/irpf-form.component';
+import { IrpfFormComponent } from './components/irpf-form/irpf-form.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule,FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, IrpfFormComponent,TranslateModule,FormsModule],
+  imports: [RouterOutlet, IrpfFormComponent,TranslateModule, ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'IRPF-angular';
 
-  selectedLanguage = 'en';
+  languageForm: FormGroup;
 
-  constructor(private translateService: TranslateService){}
+  constructor(private translateService: TranslateService) {
+    this.languageForm = new FormGroup({
+      languageSelect: new FormControl('en')
+    });
 
-  onLanguageChange() {
-    this.translateService.use(this.selectedLanguage)
+    this.languageForm.get('languageSelect')?.valueChanges.subscribe(lang => {
+      this.onLanguageChange(lang);
+    });
+  }
+  
+  onLanguageChange(lang: string) {
+    this.translateService.use(lang);
   }
 }

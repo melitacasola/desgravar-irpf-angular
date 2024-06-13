@@ -19,7 +19,8 @@ const tramosIRPF: TramoIRPF[] = [
 export class IrpfService {
 
   constructor() { }
-  obtenerPorcentajeIRPF(renta: number): number {
+  
+  getPercentageIRPF(renta: number): number {
     if (renta <= 0) {
       return 0;
     }
@@ -31,10 +32,10 @@ export class IrpfService {
     return 0;
   }
 
-  calcularIRPF(obj:IrpfNeeds): ResultadoIRPF {
-    const totalPlanesPensiones = obj.ppersonal + obj.pempresa + obj.pautonomo;
-    const porcentajeIRPF = this.obtenerPorcentajeIRPF(obj.renta);
-    const renta = obj.renta;
+  calculateIRPF(irpfNeeds:IrpfNeeds): ResultadoIRPF {
+    const totalPlanesPensiones = irpfNeeds.ppersonal + irpfNeeds.pempresa + irpfNeeds.pautonomo;
+    const porcentajeIRPF = this.getPercentageIRPF(irpfNeeds.renta);
+    const renta = irpfNeeds.renta;
     const desgravacion = totalPlanesPensiones * (porcentajeIRPF / 100);
 
     return {

@@ -1,13 +1,12 @@
 import { NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { ResultadoIRPF } from '../models/resultadoIRPF-interface';
+import { ResultadoIRPF } from '../../models/resultadoIRPF-interface';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-irpf-results',
   standalone: true,
-  imports: [NgFor,TranslateModule,FormsModule],
+  imports: [NgFor,TranslateModule],
   templateUrl: './irpf-results.component.html',
   styleUrl: './irpf-results.component.css'
 })
